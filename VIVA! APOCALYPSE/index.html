@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Hearthline — Crisis Comm PWA</title>
+  <link rel="manifest" href="manifest.json">
+  <link rel="stylesheet" href="styles.css">
+  <meta name="theme-color" content="#c0392b">
+</head>
+<body>
+  <header class="topbar">
+    <h1>Hearthline</h1>
+    <div class="status">
+      <span id="network-status" class="badge">Checking...</span>
+      <button id="syncBtn" class="btn">Sync</button>
+      <button id="alertBtn" class="btn alert">SOS</button>
+    </div>
+  </header>
+
+  <main class="container">
+    <section class="compose">
+      <h2>Send Message</h2>
+      <label>From (device id): <input id="deviceId" value="Device-A" /></label>
+      <label>To (peer id / "all"): <input id="toId" value="all" /></label>
+      <textarea id="messageText" placeholder="Describe situation..." rows="4"></textarea>
+      <div class="row">
+        <button id="sendBtn" class="btn primary">Send</button>
+        <button id="storeBtn" class="btn">Save Draft</button>
+      </div>
+    </section>
+
+    <section class="feed">
+      <h2>Message Feed</h2>
+      <div id="feedList" class="feed-list"></div>
+    </section>
+
+    <section class="peers">
+      <h2>Peers / Devices</h2>
+      <div id="peersList" class="peers-list"></div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <small>Offline-first PWA demo • Simulated peer sync • Notifications</small>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>
